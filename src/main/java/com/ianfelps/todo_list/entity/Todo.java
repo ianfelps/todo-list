@@ -7,9 +7,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
+// Entidade To-do.
 @Entity
 @Table(name = "todos")
 public class Todo {
+  // Atributos da entidade To-do.
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -20,6 +22,7 @@ public class Todo {
   private boolean realizado;
   private int prioridade;
 
+  // Construtores da entidade To-do.
   public Todo() {
 
   }
@@ -39,6 +42,7 @@ public class Todo {
     this.prioridade = prioridade;
   }
 
+  // Getters e Setters da entidade To-do.
   public Long getId() {
     return id;
   }

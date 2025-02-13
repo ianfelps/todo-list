@@ -17,31 +17,38 @@ import com.ianfelps.todo_list.entity.Todo;
 import com.ianfelps.todo_list.service.TodoService;
 import jakarta.validation.Valid;
 
+// Controlador para manipulação da entidade To-do.
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
+    // Serviço para manipulação da entidade To-do.
     private TodoService todoService;
 
+    // Construtor da classe TodoController.
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
+
+    // Endpoint para listar todos os To-dos.
+    @GetMapping
+    List<Todo> list() {
+        return todoService.list();
+    }
     
+    // Endpoint para criar um To-do.
     @PostMapping
     ResponseEntity<List<Todo>> create(@Valid @RequestBody Todo todo) {
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(todoService.create(todo));
     }
 
-    @GetMapping
-    List<Todo> list() {
-        return todoService.list();
-    }
-
+    // Edpoint para atualizar um To-do.
     @PutMapping("{id}")
     List<Todo> update(@PathVariable("id") Long id, @RequestBody Todo todo) {
         return todoService.update(id, todo);
     }
 
+    // Endpoint para deletar um To-do.
     @DeleteMapping("{id}")
     List<Todo> delete(@PathVariable("id") Long id) {
         return todoService.delete(id);

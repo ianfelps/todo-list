@@ -11,9 +11,11 @@ import com.ianfelps.todo_list.entity.Todo;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class TodoListApplicationTests {
 
+	// Injeção de dependência.
 	@Autowired
 	private WebTestClient webTestClient;
 
+	// Teste para verificação de sucesso na criação de um To-do.
 	@Test
 	void testCreateTodoSuccess() {
 		var todo = new Todo("todo 1", "desc todo 1", false, 1);
@@ -33,6 +35,7 @@ class TodoListApplicationTests {
 			.jsonPath("$[0].prioridade").isEqualTo(todo.getPrioridade());
 	}
 
+	// Teste para verificação de falha na criação de um To-do.
 	@Test
 	public void testCreateTodoFailure() {
 		var todo = new Todo("", "", false, 0);
