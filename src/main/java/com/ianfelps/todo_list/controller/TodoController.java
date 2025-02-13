@@ -44,7 +44,7 @@ public class TodoController {
 
     // Edpoint para atualizar um To-do.
     @PutMapping("{id}")
-    List<Todo> update(@PathVariable("id") Long id, @RequestBody Todo todo) {
+    List<Todo> update(@PathVariable("id") Long id, @Valid @RequestBody Todo todo) {
         return todoService.update(id, todo);
     }
 

@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
 // Entidade To-do.
@@ -20,6 +21,7 @@ public class Todo {
   @NotBlank
   private String descricao;
   private boolean realizado;
+  @Min(0)
   private int prioridade;
 
   // Construtores da entidade To-do.
