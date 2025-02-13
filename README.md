@@ -64,17 +64,6 @@ O projeto utiliza as seguintes dependências principais, definidas no arquivo `p
 - **Spring Boot DevTools**: Para facilitar o desenvolvimento com recarregamento automático.
 - **Springdoc OpenAPI**: Para documentação Swagger da API, permitindo a visualização e teste dos endpoints.
 
-## Configuração do Banco de Dados
-
-A configuração do banco de dados deve ser feita no arquivo `application.properties`. Um exemplo de configuração para o MySQL é:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
-spring.jpa.hibernate.ddl-auto=update
-```
-
 ## Endpoints da API
 
 A aplicação expõe os seguintes endpoints:
@@ -137,6 +126,57 @@ Os testes automatizados estão implementados na classe `TodoListApplicationTests
 - `testUpdateTodoSuccess()`: Testa a atualização de um To-do com sucesso.
 - `testUpdateTodoFailure()`: Testa a atualização de um To-do com falha.
 - `testDeleteTodoSuccess()`: Testa a exclusão de um To-do com sucesso.
+
+**Atualização da Documentação: Como Executar o Projeto**
+
+## Como Executar o Projeto
+
+Para executar o projeto "To-Do List" desenvolvido em Java com Spring Boot, siga os passos abaixo:
+
+### Pré-requisitos
+
+- **Java JDK 17**: Certifique-se de que o Java JDK 17 está instalado em sua máquina. Você pode verificar a instalação executando o comando:
+  ```bash
+  java -version
+  ```
+
+- **Banco de Dados**: Configure um banco de dados MySQL e crie um banco de dados para a aplicação.
+
+### Passos para Executar
+
+1. **Clone o Repositório**:
+  Clone o repositório do projeto para sua máquina local:
+  ```bash
+  git clone https://github.com/ianfelps/todo-list.git
+  cd todo-list
+  ```
+
+2. **Configurar o Banco de Dados**:
+  Edite o arquivo `src/main/resources/application.properties` para configurar a conexão com o banco de dados MySQL:
+  ```properties
+  spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco
+  spring.datasource.username=seu_usuario
+  spring.datasource.password=sua_senha
+  spring.jpa.hibernate.ddl-auto=update
+  ```
+
+3. **Compilar o Projeto**:
+  Navegue até o diretório do projeto e execute o comando Maven para compilar o projeto:
+  ```bash
+  mvn clean install
+  ```
+
+4. **Executar a Aplicação**:
+  Após a compilação bem-sucedida, você pode executar a aplicação com o seguinte comando:
+  ```bash
+  mvn spring-boot:run
+  ```
+
+5. **Acessar a API**:
+  A aplicação estará disponível em: `http://localhost:8080/todos`. Você pode acessar os endpoints da API conforme descrito na seção de **Endpoints da API**.
+
+6. **Documentação da API**:
+  A documentação da API em Swagger pode ser acessada em: `http://localhost:8080/swagger-ui.html`
 
 ## Conclusão
 
