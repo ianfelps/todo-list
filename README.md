@@ -140,6 +140,11 @@ Para executar o projeto "To-Do List" desenvolvido em Java com Spring Boot, siga 
   java -version
   ```
 
+- **Maven**: Certifique-se de que o Maven esté instalado em sua máquina. Vocé pode verificar a instalação executando o comando:
+  ```bash
+  mvn -version
+  ```
+
 - **Banco de Dados**: Configure um banco de dados MySQL e crie um banco de dados para a aplicação.
 
 ### Passos para Executar
