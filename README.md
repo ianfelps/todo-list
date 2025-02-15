@@ -140,7 +140,7 @@ Os testes automatizados estão implementados na classe `TodoListApplicationTests
 
 ## Como Executar o Projeto
 
-Para executar o projeto "To-Do List" desenvolvido em Java com Spring Boot, siga os passos abaixo:
+Para executar o projeto, siga os passos abaixo:
 
 ### Pré-requisitos
 
