@@ -30,14 +30,20 @@ A classe `Todo` representa a entidade To-do e é mapeada para a tabela `todos` n
 - `realizado`: Indica se a tarefa foi concluída.
 - `prioridade`: Nível de prioridade da tarefa (deve ser maior ou igual a zero).
 
-### TodoController
+### TodoApiController
 
-A classe `TodoController` é responsável por gerenciar as requisições HTTP relacionadas aos To-dos. Os principais métodos incluem:
+A classe `TodoApiController` é responsável por gerenciar as requisições HTTP relacionadas aos To-dos via API. Os principais métodos incluem:
 
 - `list()`: Retorna a lista de todos os To-dos.
 - `create(Todo todo)`: Cria um novo To-do.
 - `update(Long id, Todo todo)`: Atualiza um To-do existente.
 - `delete(Long id)`: Deleta um To-do existente.
+
+### TodoWeb Controller
+
+A classe `TodoWebController` é responsável por gerenciar as requisições HTTP relacionadas aos To-dos via interface web. Os principais métodos incluem:
+
+- `list()`: Retorna a lista de todos os To-dos.
 
 ### TodoService
 
@@ -63,15 +69,20 @@ O projeto utiliza as seguintes dependências principais, definidas no arquivo `p
 - **H2 Database**: Banco de dados em memória para testes e desenvolvimento.
 - **Spring Boot DevTools**: Para facilitar o desenvolvimento com recarregamento automático.
 - **Springdoc OpenAPI**: Para documentação Swagger da API, permitindo a visualização e teste dos endpoints.
+- **Thymeleaf**: Para renderização de templates HTML.
+
+## Interface Web - Em desenvolvimento...
+
+A interface web da aplicação estã disponível no enderço padrão e apresenta a lista de todos os To-dos. Ela permite a criação, atualização e exclusão de tarefas.
 
 ## Endpoints da API
 
 A aplicação expõe os seguintes endpoints:
 
-- **GET /todos**: Lista todos os To-dos.
-- **POST /todos**: Cria um novo To-do.
-- **PUT /todos/{id}**: Atualiza um To-do existente.
-- **DELETE /todos/{id}**: Deleta um To-do existente.
+- **GET /api**: Lista todos os To-dos.
+- **POST /api**: Cria um novo To-do.
+- **PUT /api/{id}**: Atualiza um To-do existente.
+- **DELETE /api/{id}**: Deleta um To-do existente.
 
 #### Documentação da API em Swagger: `http://localhost:8080/swagger-ui.html`
 
@@ -80,13 +91,13 @@ A aplicação expõe os seguintes endpoints:
 #### Listar To-dos
 
 ```http
-GET /todos
+GET /api
 ```
 
 #### Criar um To-do
 
 ```http
-POST /todos
+POST /api
 Content-Type: application/json
 
 {
@@ -100,7 +111,7 @@ Content-Type: application/json
 #### Atualizar um To-do
 
 ```http
-PUT /todos/{id}
+PUT /api/{id}
 Content-Type: application/json
 
 {
@@ -114,7 +125,7 @@ Content-Type: application/json
 #### Deletar um To-do
 
 ```http
-DELETE /todos/{id}
+DELETE /api/{id}
 ```
 
 ## Testes Automatizados
@@ -126,8 +137,6 @@ Os testes automatizados estão implementados na classe `TodoListApplicationTests
 - `testUpdateTodoSuccess()`: Testa a atualização de um To-do com sucesso.
 - `testUpdateTodoFailure()`: Testa a atualização de um To-do com falha.
 - `testDeleteTodoSuccess()`: Testa a exclusão de um To-do com sucesso.
-
-**Atualização da Documentação: Como Executar o Projeto**
 
 ## Como Executar o Projeto
 
@@ -152,8 +161,8 @@ Para executar o projeto "To-Do List" desenvolvido em Java com Spring Boot, siga 
 1. **Clone o Repositório**:
   Clone o repositório do projeto para sua máquina local:
   ```bash
-  git clone https://github.com/ianfelps/todo-list.git
-  cd todo-list
+  git clone https://github.com/ianfelps/todo_list.git
+  cd todo_list
   ```
 
 2. **Configurar o Banco de Dados**:
@@ -177,10 +186,13 @@ Para executar o projeto "To-Do List" desenvolvido em Java com Spring Boot, siga 
   mvn spring-boot:run
   ```
 
-5. **Acessar a API**:
-  A aplicação estará disponível em: `http://localhost:8080/todos`. Você pode acessar os endpoints da API conforme descrito na seção de **Endpoints da API**.
+5. **Acessar a Interface Web**:
+  A interface web estará disponível em: `http://localhost:8080`. Vocé pode acessar a interface web para criar, editar e excluir To-dos de uma forma interativa e dinâmica.
 
-6. **Documentação da API**:
+6. **Acessar a API**:
+  A API estará disponível em: `http://localhost:8080/api`. Você pode acessar os endpoints conforme descrito na seção de **Endpoints da API**.
+
+7. **Documentação da API**:
   A documentação da API em Swagger pode ser acessada em: `http://localhost:8080/swagger-ui.html`
 
 ## Conclusão

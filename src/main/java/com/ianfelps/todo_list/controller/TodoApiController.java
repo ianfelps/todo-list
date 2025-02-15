@@ -17,15 +17,15 @@ import com.ianfelps.todo_list.entity.Todo;
 import com.ianfelps.todo_list.service.TodoService;
 import jakarta.validation.Valid;
 
-// Controlador para manipulação da entidade To-do.
+// Controlador para manipulação da entidade To-do via API.
 @RestController
-@RequestMapping("/todos")
-public class TodoController {
+@RequestMapping("/api")
+public class TodoApiController {
     // Serviço para manipulação da entidade To-do.
     private TodoService todoService;
 
-    // Construtor da classe TodoController.
-    public TodoController(TodoService todoService) {
+    // Construtor do controlador.
+    public TodoApiController(TodoService todoService) {
         this.todoService = todoService;
     }
 
