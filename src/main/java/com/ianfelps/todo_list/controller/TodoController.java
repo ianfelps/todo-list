@@ -20,12 +20,12 @@ import jakarta.validation.Valid;
 // Controlador para manipulação da entidade To-do via API.
 @RestController
 @RequestMapping("/api")
-public class TodoApiController {
+public class TodoController {
     // Serviço para manipulação da entidade To-do.
     private TodoService todoService;
 
     // Construtor do controlador.
-    public TodoApiController(TodoService todoService) {
+    public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
 

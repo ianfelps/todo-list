@@ -30,9 +30,9 @@ A classe `Todo` representa a entidade To-do e é mapeada para a tabela `todos` n
 - `realizado`: Indica se a tarefa foi concluída.
 - `prioridade`: Nível de prioridade da tarefa (deve ser maior ou igual a zero).
 
-### TodoApiController
+### TodoController
 
-A classe `TodoApiController` é responsável por gerenciar as requisições HTTP relacionadas aos To-dos via API. Os principais métodos incluem:
+A classe `TodoController` é responsável por gerenciar as requisições HTTP relacionadas aos To-dos. Os principais métodos incluem:
 
 - `list()`: Retorna a lista de todos os To-dos.
 - `create(Todo todo)`: Cria um novo To-do.
@@ -41,7 +41,7 @@ A classe `TodoApiController` é responsável por gerenciar as requisições HTTP
 
 ### TodoWebController - Em desenvolvimento...
 
-A classe `TodoWebController` é responsável por gerenciar as requisições HTTP relacionadas aos To-dos via interface web. Os principais métodos incluem:
+A classe `TodoWebController` é responsável por processar as requisições HTTP da interface web. Os principais métodos incluem:
 
 - `list()`: Retorna a lista de todos os To-dos.
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ianfelps.todo_list.entity.Todo;
 import com.ianfelps.todo_list.service.TodoService;
 
+
 // Controlador para manipulação da entidade To-do via interface web.
 @Controller
 @RequestMapping("/")
@@ -29,4 +30,5 @@ public class TodoWebController {
         model.addAttribute("todos", todos);
         return "index";
     }
+    
 }
